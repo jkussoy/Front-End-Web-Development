@@ -18,16 +18,16 @@
 // console.log(isMarried);
 
 //Javascript Operator
-// let bil1 = 10;
-// let bil2 = 3;
+let bil1 = 10;
+let bil2 = 3;
 
 //Artimethic
-// console.log(bil1 + bil2);
-// console.log(bil1 - bil2);
-// console.log(bil1 / bil2);
-// console.log(bil1 * bil2);
-// console.log(bil1 % bil2);
-// console.log(bil1 ** bil2);
+console.log(bil1 + bil2);
+console.log(bil1 - bil2);
+console.log(bil1 / bil2);
+console.log(bil1 * bil2);
+console.log(bil1 % bil2);
+console.log(bil1 ** bil2);
 
 //Assignment Operator
 // let x = 10;
@@ -36,9 +36,9 @@
 // console.log(x);
 
 //string operator
-// let firstName = "John";
-// let lastName = "Doe";
-// console.log(firstName + " " + lastName);
+let firstName = "John";
+let lastName = "Doe";
+console.log(firstName + " " + lastName);
 
 //Equality Operator
 let x = 10;
