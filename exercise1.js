@@ -8,10 +8,10 @@
 //Dan mengembalikan output berupa BMI
 //Buat fungsi menggunakan IIFE & Callback Function
 
-//IIFE
-let bmi = (function (berat, tinggiCm) {
-  let tinggiMeter = tinggiCm / 100;
-  return berat / (tinggiMeter * tinggiMeter);
+//Penggunaan IIFE
+let bmi = (function (weight, heightCm) {
+  let heightMeter = heightCm / 100;
+  return weight / (heightMeter * heightMeter);
 })(70, 175);
 
 console.log("Bmi IIFE : " + bmi.toFixed(2));
@@ -21,9 +21,9 @@ function bmi1(callback) {
   return callback(70, 175);
 }
 
-let bmi2 = bmi1(function (berat, tinggiCm) {
-  let tinggiMeter = tinggiCm / 100;
-  return berat / (tinggiMeter * tinggiMeter);
+let bmi2 = bmi1(function (weight, heightCm) {
+  let heightMeter = heightCm / 100;
+  return weight / (heightMeter * heightMeter);
 });
 
 console.log("BMI Callback: " + bmi2.toFixed(2));
