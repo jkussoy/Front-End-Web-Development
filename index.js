@@ -1,47 +1,81 @@
-// console.log("Hello World");
+//javascript Function
 
-//Javascript Variable
-// let firstName = "John"; //Camel case
-// let first_name = "John"; //Snake case
-// let FirstName = "John"; //Pascal case
+//1. Func. Declaration
+function sayHello(fullName) {
+  console.log("Hello " + fullName);
+}
 
-//Tipe Data
-//Const fullName = "John Doe"
-// fullName = "Bob"; //error
+sayHello("John");
 
-// let fullName = "John Doe"; // String
-// let age = 30; //Number bisa bilangan bulat atau desimal
-// let isMarried = false; //Boolean
-// let address; //undefined
-// console.log(fullName);
-// console.log(age);
-// console.log(isMarried);
+//Penggunaan return
+// function sayHello(fullName) {
+//   return "Hello " + fullName;
+// }
+// let output = sayHello("John"); //Call / Invoke
+// console.log(output);
 
-//Javascript Operator
-// let bil1 = 10;
-// let bil2 = 3;
+// sayHello("John");
 
-//Artimethic
-// console.log(bil1 + bil2);
-// console.log(bil1 - bil2);
-// console.log(bil1 / bil2);
-// console.log(bil1 * bil2);
-// console.log(bil1 % bil2);
-// console.log(bil1 ** bil2);
+//2. Func. Expression
+let sayHello2 = function (fullName) {
+  console.log("Hello " + fullName);
+};
+sayHello2("Bob");
 
-//Assignment Operator
-// let x = 10;
-// // x = x + 1;
-// x++;
-// console.log(x);
+// Penggunaan Return
+// let sayHello2 = function (fullname){
+//     return "Hello " + fullName;
+// };
+// let output2 = sayHello2("Bob"){  //Call / Invoke
+//     console.log(output);
+// }
+// sayHello2("Bob")
 
-//string operator
-// let firstName = "John";
-// let lastName = "Doe";
-// console.log(firstName + " " + lastName);
+//3. IIFE (Immediately Invoked Function Expressions)
+// Self -executing Anonymous Function
+(function () {
+  console.log("Hello IIFE");
+})();
 
-//Equality Operator
-let x = 10;
-let y = "10";
-console.log(x == y); //true
-console.log(x === y); // false
+//Menambahkan Argumen
+(function (fullName) {
+  console.log("Hello " + fullName);
+})("IIFE");
+
+//Return
+let output3 = (function (fullName) {
+  return "Hello " + fullName;
+})("IIFE");
+
+console.log(output3);
+
+//4. Callback Function
+//is a function passed as an argument to another function
+function sayHello3(callback) {
+  callback();
+}
+// Cara Pertama
+// function hello() {
+//   console.log("Hello Callback");
+// }
+// sayHello3(hello);
+
+// Cara kedua
+sayHello3(function () {
+  console.log("Hello Callback");
+});
+
+// Callback ada parameter
+function sayHello3(callback) {
+  callback("Callback Function");
+}
+
+//Callback ada return
+function sayHello3(callback) {
+  let result = callback("callback function");
+  return result;
+}
+let output4 = sayHello3(function (fullName) {
+  return "hello" + fullName;
+});
+console.log(output4);
