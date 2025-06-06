@@ -124,8 +124,8 @@ students1.forEach(function (item, index) {
   console.log(index);
 });
 
-let output = students1.map(function (item) {
+let output1 = students1.map(function (item) {
   return item.name;
 });
 
-console.log(output);
+console.log(output1);
