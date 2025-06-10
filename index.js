@@ -1,81 +1,51 @@
-//javascript Function
+// //Javascript ES6
+// //String Literal
 
-//1. Func. Declaration
-function sayHello(fullName) {
-  console.log("Hello " + fullName);
-}
+// const john = {
+//   name: "John Doe",
+//   age: 30,
+// };
 
-sayHello("John");
+// //Hi, Nama Saya John Doe. Umur Saya 30 Tahun.
+// //Menggunakan ES5
+// let kalimat5 =
+//   "Hi, Nama Saya " + john.name + ". Umur Saya " + john.age + " Tahun.";
+// console.log(kalimat5);
 
-//Penggunaan return
-// function sayHello(fullName) {
-//   return "Hello " + fullName;
+// //Menggunakan ES6
+// let kalimat6 = `Hi, Nama Saya ${john.name}. Umur saya ${john.age} Tahun.`;
+// console.log(kalimat6);
+
+//Arrow Function
+//Pakai Cara Lama
+// function greetings(name) {
+//   return `My Name ${name}`;
 // }
-// let output = sayHello("John"); //Call / Invoke
+// console.log(greetings("John Doe"));
+
+// //Menggunakan ES6
+// const greetings6 = (name) => {
+//   return `Hi, My Name Is ${name}`;
+// };
+// console.log(greetings6("Bob"));
+
+// //Implicit return value
+// const greetings7 = (name) => `Hi, My Name Is ${name}`;
+
+// console.log(greetings7("Bob"));
+
+// //contoh penggunaan arrow function pada fungsi callback
+// const array = [1, 2, 3, 4, 5];
+// array.forEach((item) => {
+//   console.log(item);
+// });
+
+// //contoh penggunaan arrow function pada fungsi callback
+// const array2 = [1, 2, 3, 4, 5];
+// let output = array.map((item) => item);
 // console.log(output);
 
-// sayHello("John");
-
-//2. Func. Expression
-let sayHello2 = function (fullName) {
-  console.log("Hello " + fullName);
-};
-sayHello2("Bob");
-
-// Penggunaan Return
-// let sayHello2 = function (fullname){
-//     return "Hello " + fullName;
-// };
-// let output2 = sayHello2("Bob"){  //Call / Invoke
-//     console.log(output);
-// }
-// sayHello2("Bob")
-
-//3. IIFE (Immediately Invoked Function Expressions)
-// Self -executing Anonymous Function
-(function () {
-  console.log("Hello IIFE");
-})();
-
-//Menambahkan Argumen
-(function (fullName) {
-  console.log("Hello " + fullName);
-})("IIFE");
-
-//Return
-let output3 = (function (fullName) {
-  return "Hello " + fullName;
-})("IIFE");
-
-console.log(output3);
-
-//4. Callback Function
-//is a function passed as an argument to another function
-function sayHello3(callback) {
-  callback();
-}
-// Cara Pertama
-// function hello() {
-//   console.log("Hello Callback");
-// }
-// sayHello3(hello);
-
-// Cara kedua
-sayHello3(function () {
-  console.log("Hello Callback");
-});
-
-// Callback ada parameter
-function sayHello3(callback) {
-  callback("Callback Function");
-}
-
-//Callback ada return
-function sayHello3(callback) {
-  let result = callback("callback function");
-  return result;
-}
-let output4 = sayHello3(function (fullName) {
-  return "hello" + fullName;
-});
-console.log(output4);
+//Default Parameter
+const greetings = (fullName = "John", age = 30) =>
+  `Hi, Nama saya ${fullName}. Umur saya ${age} tahun.`;
+console.log(greetings("Bob", 25));
