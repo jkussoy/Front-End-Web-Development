@@ -1,51 +1,118 @@
-// //Javascript ES6
-// //String Literal
+// //Rest Parameter dan Spread Operator
 
+// //Tanpa Rest Parameter
+// const func1 = (param1, param2, param3, param4, param5) => {
+//   console.log(param1, param2, param3, param4, param5);
+// };
+
+// func1(1, 2, 3, 4, 5);
+
+// //Dengan Rest Parameter tipenya adalah array
+// //Rest Parameter harus di akhir
+// const func2 = (...params) => {
+//   console.log(params);
+// };
+
+// func2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+//Spread Operator
+//Spread digunakan pada array dan object
+// const numbers = [1, 2, 3, 4, 5];
+// console.log(numbers);
+// //Spread digunakan tidak menggunakan array
+// console.log(...numbers);
+
+// //1. Duplikasi Array
+// // Cara yang salah
+// // const number2 = numbers;
+// // numbers.push(6);
+// // console.log(numbers);
+// // console.log(number2);
+
+// const number2 = [...numbers, 6, 7, 8];
+// console.log(number2);
+
+//Pada Array
+//2. Menggabungkan Array
+// const numbers1 = [1, 2, 3];
+// const numbers2 = [6, 7, 8];
+// const numbers3 = [9, 10, 11];
+
+// //Cara Sebelumnya
+// //const numbersCombine = numbers1.concat(4, 5, numbers2, numbers3);
+// //Cara yang menggunakan Spread operator
+// const numbersCombine = [...numbers1, 4, 5, ...numbers2, ...numbers3];
+// console.log(numbersCombine);
+
+// //Pada Object
 // const john = {
-//   name: "John Doe",
+//   fullname: "John Doe",
 //   age: 30,
 // };
 
-// //Hi, Nama Saya John Doe. Umur Saya 30 Tahun.
-// //Menggunakan ES5
-// let kalimat5 =
-//   "Hi, Nama Saya " + john.name + ". Umur Saya " + john.age + " Tahun.";
-// console.log(kalimat5);
+// //1. Duplikasi Object
+// const john2 = { ...john, address: "airmadidi" };
+// console.log(john2);
 
-// //Menggunakan ES6
-// let kalimat6 = `Hi, Nama Saya ${john.name}. Umur saya ${john.age} Tahun.`;
-// console.log(kalimat6);
+// //2. Menggabungkan Object
+// const obj1 = { a: 1, b: 2 };
+// const obj2 = { c: 3, d: 4 };
+// const combineObj = { ...obj1, ...obj2 };
 
-//Arrow Function
-//Pakai Cara Lama
-// function greetings(name) {
-//   return `My Name ${name}`;
-// }
-// console.log(greetings("John Doe"));
+// console.log(combineObj);
 
-// //Menggunakan ES6
-// const greetings6 = (name) => {
-//   return `Hi, My Name Is ${name}`;
+//Destructuring Array & Object
+const numbers = [1, 2, 3, 4, 5];
+
+//Tanpa destructing ES6
+// const num1 = numbers[0];
+// const num2 = numbers[1];
+// const num3 = numbers[2];
+// const num4 = numbers[3];
+// const num5 = numbers[4];
+
+//Pada Array
+//Dengan Destructing ES6
+// const [num1, num2, num3, num4, num5] = numbers;
+// console.log(num1);
+
+//Jika ingin mengambil beberapa saja
+// const [num1, , num3, , num5] = numbers;
+// console.log(num1);
+
+//Destructing di gabung dengan Rest
+const [num1, ...rest] = numbers;
+console.log(num1);
+console.log(rest);
+
+//Pada Object
+//harus sesuai dari nama properti di dalam object
+const john = {
+  fullName: "John Doe",
+  age: 30,
+  status: "active",
+  address: "airmadidi",
+};
+
+// const fullName = john.fullName; Tanpa Destructuring
+//Dengan Destructuring
+const { fullName, age, address } = john;
+console.log(fullName, age, address);
+
+// //Contoh ingin mengganti langsung nama propertinya
+// const { fullName, age, address:alamat } = john;
+// console.log(fullName, age, alamat)
+
+//cara 1
+// const sayGreetings = (obj) => {
+//   console.log(obj.fullName);
+//   console.log(obj.age);
 // };
-// console.log(greetings6("Bob"));
+// sayGreetings(john);
 
-// //Implicit return value
-// const greetings7 = (name) => `Hi, My Name Is ${name}`;
-
-// console.log(greetings7("Bob"));
-
-// //contoh penggunaan arrow function pada fungsi callback
-// const array = [1, 2, 3, 4, 5];
-// array.forEach((item) => {
-//   console.log(item);
-// });
-
-// //contoh penggunaan arrow function pada fungsi callback
-// const array2 = [1, 2, 3, 4, 5];
-// let output = array.map((item) => item);
-// console.log(output);
-
-//Default Parameter
-const greetings = (fullName = "John", age = 30) =>
-  `Hi, Nama saya ${fullName}. Umur saya ${age} tahun.`;
-console.log(greetings("Bob", 25));
+//cara 2
+const sayGreetings = ({ fullName, age }) => {
+  console.log(fullName);
+  console.log(age);
+};
+sayGreetings(john);
