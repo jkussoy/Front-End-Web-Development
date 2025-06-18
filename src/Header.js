@@ -1,3 +1,4 @@
+import Generations from "./Generations.js";
 import Logo from "./logo.js";
 
 const Header = () => {
@@ -7,6 +8,7 @@ const Header = () => {
       <h1>{header}</h1>
       <p>Materi tentang pengenalan React JS menggunakan CRA</p>
       <Logo />
+      <Generations />
     </div>
   );
 };
