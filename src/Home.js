@@ -1,3 +1,4 @@
+import CardInfo from "./CardInfo";
 import Search from "./Search";
 
 const Home = () => {
@@ -5,6 +6,7 @@ const Home = () => {
     <div>
       <h1>Home</h1>
       <Search />
+      <CardInfo />
     </div>
   );
 };
