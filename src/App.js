@@ -1,12 +1,13 @@
-import Title from "./Title";
 import DisplayArray from "./DisplayArray";
+import Header from "./Header";
+import Logo from "./logo";
 
 const App = () => {
   return (
     // JSX
     <>
-      <Title />
-      <DisplayArray />
+      <Header />
+      {/* <DisplayArray /> */}
     </>
   );
 };
