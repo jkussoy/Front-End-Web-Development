@@ -1,12 +1,12 @@
 import Header from "./Header";
-import Logo from "./logo";
+import Home from "./Home";
 
 const App = () => {
   return (
     // JSX
     <>
       <Header />
-      {/* <DisplayArray /> */}
+      <Home />
     </>
   );
 };
