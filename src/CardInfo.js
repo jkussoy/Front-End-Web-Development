@@ -1,14 +1,14 @@
 import Evolution from "./Evolution";
-import Logo from "./logo";
 import TypeEffect from "./TypeEffect";
+import Logo from "./Logo";
 
-const CardInfo = () => {
+const CardInfo = ({ logoText, onLogoClick }) => {
   return (
     <div>
       <h1>Card-Info</h1>
       <Evolution />
       <TypeEffect />
-      <Logo />
+      <Logo text={logoText} onClick={onLogoClick} />
     </div>
   );
 };

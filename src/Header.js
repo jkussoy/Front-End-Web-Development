@@ -1,13 +1,12 @@
-import Generations from "./Generations.js";
-import Logo from "./logo.js";
+import React from "react";
+import Logo from "./Logo";
+import Generations from "./Generations";
 
-const Header = () => {
-  const header = "Basic React";
+const Header = ({ logoText, onLogoClick }) => {
   return (
     <div>
-      <h1>{header}</h1>
-      <p>Materi tentang pengenalan React JS menggunakan CRA</p>
-      <Logo />
+      <h1>Header</h1>
+      <Logo text={logoText} onClick={onLogoClick} />
       <Generations />
     </div>
   );

@@ -1,12 +1,13 @@
-import CardInfo from "./CardInfo";
+import React from "react";
 import Search from "./Search";
+import CardInfo from "./CardInfo";
 
-const Home = () => {
+const Home = ({ logoText, onLogoClick }) => {
   return (
     <div>
       <h1>Home</h1>
       <Search />
-      <CardInfo />
+      <CardInfo logoText={logoText} onLogoClick={onLogoClick} />
     </div>
   );
 };

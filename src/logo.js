@@ -1,10 +1,9 @@
-const Logo = () => {
-  const logo = "Ini Logo";
+const Logo = ({ text, onClick }) => {
   return (
-    <>
-      <h1>{logo}</h1>
+    <div onClick={onClick} style={{ cursor: "pointer" }}>
+      <h1>{text}</h1>
       <p>Ini adalah Logo</p>
-    </>
+    </div>
   );
 };
 
