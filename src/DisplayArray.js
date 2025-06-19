@@ -1,13 +1,15 @@
-const DisplayArray = () => {
-  const numbers = [1, 2, 3, 4, 5];
-  return (
-    <>
-      <p>Javascript expression inside jsx</p>
-      {numbers.map((item) => {
-        return <p>{item}</p>;
-      })}
-    </>
-  );
+const Title = ({ boolean, text, number }) => {
+  if (boolean) {
+    return (
+      <>
+        <h1>{text}</h1>
+        <h2>{number}</h2>
+        <p>Materi tentang pengenalan React JS mengunakan CRA</p>
+      </>
+    );
+  } else {
+    return <h1>Kondisi Salah</h1>;
+  }
 };
 
-export default DisplayArray;
+export default Title;
